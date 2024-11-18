@@ -1,11 +1,17 @@
+import { Card, CardContent } from "@/components/ui/card"
+  
 interface PodcastCardProps {
     key: number
 };
 
-export function PodcastCard({key}: PodcastCardProps) {
-    return (
-        <div className="overflow-hidden rounded-md h-[275px] w-[200px] bg-yellow-500 transition duration-125 hover:scale-105 cursor-pointer hover:rounded-md">
-
-        </div>
-    )
+export function PodcastCard() {
+  return (
+    <div className="p-1">
+      <Card>
+        <CardContent className="flex aspect-square items-center justify-center p-6 bg-red-500">
+          <span className="text-3xl font-semibold"></span>
+        </CardContent>
+      </Card>
+    </div>
+  )
 };

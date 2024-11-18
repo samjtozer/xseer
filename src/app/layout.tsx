@@ -34,11 +34,13 @@ export default function RootLayout({
       >
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
-          <main className="w-full mx-1 my-1">
+          <main className="flex flex-col flex-grow">
             <div className="">
               <AppSearchBar />
             </div>
-            {children}
+            <div className="flex-grow">
+              {children}
+            </div>
           </main>
         </SidebarProvider>
 

@@ -1,5 +1,6 @@
 import { MediaCarousel } from "@/components/media-carousel";
 import { PodcastCard } from "@/components/podcast-card";
+import { CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 
 
@@ -37,24 +38,20 @@ const PODCAST_DATA: PodcastData[] = [
         "id": 2,
         "name": "Bad Friends"
     },
-    {
-        "id": 2,
-        "name": "Bad Friends"
-    },
-    {
-        "id": 2,
-        "name": "Bad Friends"
-    },
 ];
 
 export default function Podcast() {
   return (
-    <main className="flex flex-col px-5 py-5">
-        <div className="flex">
-            <MediaCarousel title={"Trending"}>
-                {PODCAST_DATA.map((idx, podcast) => <PodcastCard key={idx} />)}
-            </MediaCarousel>
-        </div>
+    <main>
+      <div className="flex w-full">
+        <MediaCarousel title="Trending">
+          {PODCAST_DATA.map((idx, podcast) => (
+            <CarouselItem key={idx} className="basis-1/5">
+              <PodcastCard key="1" />
+            </CarouselItem>
+          ))}
+        </MediaCarousel>
+      </div>
     </main>
   );
 }
